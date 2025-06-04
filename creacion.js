@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Estudiante_1 = require("./Estudiante");
+var categoria_1 = require("./categoria");
+var computadora_1 = require("./computadora");
+var concurso_1 = require("./concurso");
+var laboratorio_1 = require("./laboratorio");
+var concurso = new concurso_1.Concurso("Concurso de Programación 2025");
+var logicaBasica = new categoria_1.Categorias("Lógica Básica");
+concurso.agregarCategoria(logicaBasica);
+var lab1 = new laboratorio_1.laboratorio("Laboratorio A", ["NetBeans", "MySQL", "VS Code"]);
+logicaBasica.agregarLaboratorio(lab1);
+lab1.agregarComputadora(new computadora_1.Computadora("PC-1"));
+lab1.agregarComputadora(new computadora_1.Computadora("PC-2"));
+var estudiante1 = new Estudiante_1.Estudiante("Laura Gómez", logicaBasica, lab1, lab1.Computadoras[0], ["PostgreSQL", "Visual Studio"]);
+estudiante1.mostrarInfo();
